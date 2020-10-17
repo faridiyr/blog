@@ -74,11 +74,16 @@
 
          </div>
 
-         <!-- <div class="row">
+         <div class="row">
              <div class="col-12 text-center">
                  <a href="#" class="btn uza-btn btn-3">Load More</a>
              </div>
-         </div> -->
+         </div>
+         <div class="row">
+             <div class="col-12 text-center">
+                 <a href="#" class="btn uza-btn btn-3">Load More</a>
+             </div>
+         </div>
 
      </div>
  </div>
