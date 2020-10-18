@@ -27,11 +27,11 @@
  <div class="uza-blog-area section-padding-80">
      <div class="container">
 
-         <form action="" class="form-inline">
+         <form action="" class="form-inline" method="POST">
              <div class="form-group mb-2">
                  <label for="kategori">Kategori :&emsp;</label>
                  <select class="form-control" name="kategori" id="kategori">
-                     <option value="">All Kategori</option>
+                     <option value="all">All Kategori</option>
                      <?php
                         foreach ($kategori as $item) {
                             echo '<option value="' . $item['idkategori'] . '">' . $item['nama'] . '</option>';

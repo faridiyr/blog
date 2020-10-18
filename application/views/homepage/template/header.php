@@ -46,8 +46,8 @@
                         <!-- Close Button -->
                         <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
                         <!-- Form -->
-                        <form action="index.html" method="post">
-                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search article and hit enter...">
+                        <form action="<?= site_url('Search') ?>" method="post">
+                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search article by title and hit enter...">
                             <button type="submit">Search</button>
                         </form>
                     </div>
