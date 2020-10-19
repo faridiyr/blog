@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <img class="mb-50" src="<?= base_url('assets/upload/post/' . $post->gambar_post) ?>" alt="" align="center">
+                                <img class="mb-50" src="<?= base_url('assets/upload/post/' . $post->gambar_post) ?>" alt="" style="width: 1200px; height: 600px">
                             </div>
                             <div class="col-12 col-lg-10">
                                 <p>
