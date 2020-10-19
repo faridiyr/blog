@@ -27,19 +27,23 @@
  <div class="uza-blog-area section-padding-80">
      <div class="container">
 
-         <form action="" class="form-inline" method="POST">
-             <div class="form-group mb-2">
-                 <label for="kategori">Kategori :&emsp;</label>
-                 <select class="form-control" name="kategori" id="kategori">
-                     <option value="all">All Kategori</option>
-                     <?php
-                        foreach ($kategori as $item) {
-                            echo '<option value="' . $item['idkategori'] . '">' . $item['nama'] . '</option>';
-                        }
-                        ?>
-                 </select>
-             </div>
-         </form>
+         <div class="row">
+             <form action="" class="form-inline" method="POST">
+                 <div class="form-group mb-2">
+                     <h4>Kategori :&emsp;</h4>
+                     <select class="form-control" name="kategori" id="kategori">
+                         <option value="all">All Kategori</option>
+                         <?php
+                            foreach ($kategori as $item) {
+                                echo '<option value="' . $item['idkategori'] . '">' . $item['nama'] . '</option>';
+                            }
+                            ?>
+                     </select>
+                     &emsp;
+                     <button type="button" class="btn btn-primary">Apply</button>
+                 </div>
+             </form>
+         </div>
          <br>
          <div class="row">
              <?php
