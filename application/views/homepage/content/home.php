@@ -94,11 +94,12 @@
             ?>
                 <!-- Single Blog Post -->
                 <div class="col-12 col-lg-4">
-                    <div class="single-blog-post bg-img mb-80" style="background-image: url(<?php echo base_url('assets/upload/post/' . $item['file_gambar']) ?>">
+                    <div class="single-blog-post bg-img mb-80" style="background-image: url(<?php echo base_url('assets/upload/post/' . $item['gambar_post']) ?>">
                         <!-- Post Content -->
                         <div class="post-content">
                             <span class="post-date"><span><?= $dateformat_tanggal ?></span><?= $dateformat_bulan_tahun ?></span>
-                            <a href="#" class="post-title"><?= $item['judul'] ?></a>
+                            <a href="<?= site_url('Post/detail_post/' . $item['idpost']) ?>" class="post-title"><?= $item['judul'] ?></a>
+                            <h6>by&ensp;<span style="color: blue; font-family:Arial, Helvetica, sans-serif"><?= $item['nama'] ?></span></h6>
                             <p><?php
                                 $isi = $item['isi_post'];
                                 if (strlen($isi) >= 100) {
@@ -107,7 +108,7 @@
                                     echo $item['isi_post'];
                                 }
                                 ?></p>
-                            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                            <a href="<?= site_url('Post/detail_post/' . $item['idpost']) ?>" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
                         </div>
                     </div>
                 </div>
