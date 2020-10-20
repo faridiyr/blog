@@ -11,7 +11,6 @@
         </ol>
     </nav>
     <br>
-    <?= $this->session->flashdata('notification') ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -142,11 +141,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 <script type="text/javascript">
     function delete_repositori_ajax(idkategori) {

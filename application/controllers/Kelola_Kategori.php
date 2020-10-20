@@ -8,6 +8,9 @@ class Kelola_Kategori extends CI_Controller
         if (!$this->session->userdata('login')) {
             $this->session->set_flashdata('notification', '<div class="alert alert-danger" role="alert"> Silakan login terlebih dahulu!</div>');
             redirect('Auth');
+        } elseif ($this->session->userdata('level') != 'admin') {
+            $this->session->set_flashdata('notification', '<div class="alert alert-danger" role="alert"> Anda bukan Admin!</div>');
+            redirect('Auth');
         }
 
         $this->load->model('Kategori_Model');
@@ -73,7 +76,6 @@ class Kelola_Kategori extends CI_Controller
     {
         $idkategori = $_POST['idkategori'];
 
-        //hapus data repositori
         $this->Kategori_Model->delete_kategori($idkategori);
     }
 }

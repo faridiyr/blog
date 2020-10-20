@@ -142,4 +142,38 @@ class Post_Model extends CI_Model
 
         return $result;
     }
+
+    function get_all_post_by_penulis($idpenulis)
+    {
+        $query = $this->db->query("SELECT post.idpost as idpost, 
+                                    post.judul as judul, 
+                                    post.idkategori as idkategori, 
+                                    post.isi_post as isi_post, 
+                                    post.file_gambar as gambar_post, 
+                                    post.tgl_insert as tgl_insert, 
+                                    post.tgl_update as tgl_update, 
+                                    post.idpenulis as idpenulis,
+                                    kategori.nama as namakategori
+                                    FROM post 
+                                    JOIN penulis 
+                                    ON post.idpenulis = penulis.idpenulis
+                                    JOIN kategori
+                                    ON post.idkategori = kategori.idkategori
+                                    WHERE post.idpenulis = $idpenulis");
+
+        $indeks = 0;
+        $result = array();
+
+        foreach ($query->result_array() as $row) {
+            $result[$indeks++] = $row;
+        }
+
+        return $result;
+    }
+
+    function delete_post($idpost)
+    {
+        $this->db->where('idpost', $idpost);
+        $this->db->delete('post');
+    }
 }
