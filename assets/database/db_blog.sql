@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2020 at 07:18 AM
+-- Generation Time: Oct 20, 2020 at 01:59 PM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -61,7 +61,8 @@ CREATE TABLE `kategori` (
 INSERT INTO `kategori` (`idkategori`, `nama`) VALUES
 (1, 'Teknologi'),
 (2, 'Kesehatan'),
-(3, 'otomotif');
+(3, 'Otomotif'),
+(6, 'tes video');
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,7 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`idpost`, `judul`, `idkategori`, `isi_post`, `file_gambar`, `tgl_insert`, `tgl_update`, `idpenulis`) VALUES
 (1, 'HTML', 1, 'HTML adalah singkatan dari HyperText Markup Language yaitu bahasa pemrograman standar yang digunakan untuk membuat sebuah halaman web, yang kemudian dapat diakses untuk menampilkan berbagai informasi di dalam sebuah penjelajah web Internet (Browser). HTML dapat juga digunakan sebagai link link antara file-file dalam situs atau dalam komputer dengan menggunakan localhost, atau link yang menghubungkan antar situs dalam dunia internet.\r\nSupaya dapat menghasilkan tampilan wujud yang terintegerasi Pemformatan hiperteks sederhana ditulis dalam berkas format ASCII sehingga menjadi halaman web dengan perintah-perintah HTML.\r\nHTML merupakan sebuah bahasa yang bermula bahasa yang sebelumnya banyak dipakai di dunia percetakan dan penerbirtan yang disebut Standard Generalized Markup Language (SGML).', 'html.jpg', '2020-10-07', '2020-10-08', 4),
 (2, 'Manfaat Tanaman Kaktus', 2, 'Manfaat tanaman kaktus di dalam ruangan tentunya dapat mempercantik ruangan dengan bentuknya yang unik dan indah. Tidak jarang sekarang ini cukup banyak yang memelihara kaktus di rumah. Namun, tidak hanya berfungsi untuk memperindah ruangan, kaktus ternyata juga baik untuk kesehatan.\r\nAda berbagai macam kaktus dengan beragam variasi bentuk, ukuran, hingga warna yang perlu dipertimbangkan dalam memeliharanya. Berapa jenis kaktus seperti kaktus Parodia, Haworthia (Zebra Cactus), Beaver Tail, Chepalocereus senilis, Pincushion, Fairy Castle dan Kaktus hias Gymnocalycium bisa jadi pilihan untuk pemula karena memiliki daya tahan ekstra dan tidak perlu perawatan yang sulit.\r\nManfaat tanaman kaktus di dalam ruangan terutama berkaitan dengan kebersihan udara. Tidak heran tanaman kaktus menjadi banyak digemari, hal ini karena manfaatnya yang dapat membantu pernapasan dan membersihkan udara di dalam ruangan sangat baik untuk kesehatan.', 'kaktus.jpg', '2020-10-15', '2020-10-16', 4),
-(3, 'New Honda CBR250RR SP Siap Saingi Kawasaki Ninja ZX25R 4 Cylinder', 3, 'Akhir akhir ini Dunia otomotif di gegerkan dengan launching nya produk baru dari Kawasaki ya itu ZX25R yang bekapasitas mesin 4 cylinder.\r\nPT Kawasaki Motor Indonesia (KMI) merilis motor yang juga disebut Ninja ZX-25R ini secara virtual melalui channel YouTube KMI pada Jumat (10/7/2020). Indonesia dipilih sebagai tempat debut Kawasaki Ninja 250 ZX25R 4 silinder terbaru ini untuk pasar global.\r\nMaka dari itu hal ini membuat para perusahaan otomotif terkenal tidak akan tinggal diam melihat saingan nya rilis produk terbarunya.\r\nHonda dalam kubu yang panas pada kali ini,Oleh sebab itu Honda tidak mau kalah dan menciptakan sebuah karya yang sangat luar biasa yaitu All New Honda CBR 250RR SP yang tentunya siap untuk saingi si hijau ZX25R.', 'motor.jpg', '2020-10-11', '2020-10-12', 4);
+(3, 'New Honda CBR250RR SP Vs Kawasaki Ninja ZX25R 4 Cylinder', 3, 'Akhir akhir ini Dunia otomotif di gegerkan dengan launching nya produk baru dari Kawasaki ya itu ZX25R yang bekapasitas mesin 4 cylinder.\r\nPT Kawasaki Motor Indonesia (KMI) merilis motor yang juga disebut Ninja ZX-25R ini secara virtual melalui channel YouTube KMI pada Jumat (10/7/2020). Indonesia dipilih sebagai tempat debut Kawasaki Ninja 250 ZX25R 4 silinder terbaru ini untuk pasar global.\r\nMaka dari itu hal ini membuat para perusahaan otomotif terkenal tidak akan tinggal diam melihat saingan nya rilis produk terbarunya.\r\nHonda dalam kubu yang panas pada kali ini,Oleh sebab itu Honda tidak mau kalah dan menciptakan sebuah karya yang sangat luar biasa yaitu All New Honda CBR 250RR SP yang tentunya siap untuk saingi si hijau ZX25R.', 'motor.jpg', '2020-10-11', '2020-10-12', 4);
 
 --
 -- Indexes for dumped tables
@@ -157,7 +158,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `penulis`
