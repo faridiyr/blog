@@ -8,6 +8,9 @@ class Dashboard_Penulis extends CI_Controller
         if (!$this->session->userdata('login')) {
             $this->session->set_flashdata('notification', '<div class="alert alert-danger" role="alert"> Silakan login terlebih dahulu!</div>');
             redirect('Auth');
+        } elseif ($this->session->userdata('level') != 'penulis') {
+            $this->session->set_flashdata('notification', '<div class="alert alert-danger" role="alert"> Anda bukan Penulis!</div>');
+            redirect('Auth');
         }
     }
 
