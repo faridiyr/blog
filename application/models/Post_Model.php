@@ -12,7 +12,8 @@ class Post_Model extends CI_Model
     function get_post_recent()
     {
         $query = $this->db->query("SELECT post.idpost as idpost, 
-                                    post.judul as judul, post.idkategori as idkategori, 
+                                    post.judul as judul, 
+                                    post.idkategori as idkategori, 
                                     post.isi_post as isi_post, 
                                     post.file_gambar as gambar_post, 
                                     post.tgl_insert as tgl_insert, 
@@ -38,14 +39,15 @@ class Post_Model extends CI_Model
     function get_all_post()
     {
         $query = $this->db->query("SELECT post.idpost as idpost, 
-                                    post.judul as judul, post.idkategori as idkategori, 
+                                    post.judul as judul, 
+                                    post.idkategori as idkategori, 
                                     post.isi_post as isi_post, 
                                     post.file_gambar as gambar_post, 
                                     post.tgl_insert as tgl_insert, 
                                     post.tgl_update as tgl_update, 
                                     penulis.file_gambar as gambar_penulis,
                                     penulis.nama as nama
-                                FROM post JOIN penulis WHERE post.idpenulis = penulis.idpenulis ORDER BY post.tgl_update DESC");
+                                    FROM post JOIN penulis WHERE post.idpenulis = penulis.idpenulis ORDER BY post.tgl_update DESC");
 
         $indeks = 0;
         $result = array();
@@ -114,5 +116,30 @@ class Post_Model extends CI_Model
         $this->db->where('idpost', $idpost);
 
         return $this->db->get();
+    }
+
+    function get_all_kategori_by_kategori($idkategori)
+    {
+        $query = $this->db->query("SELECT post.idpost as idpost, 
+                                    post.judul as judul, post.idkategori as idkategori, 
+                                    post.isi_post as isi_post, 
+                                    post.file_gambar as gambar_post, 
+                                    post.tgl_insert as tgl_insert, 
+                                    post.tgl_update as tgl_update, 
+                                    penulis.file_gambar as gambar_penulis,
+                                    penulis.nama as nama
+                                    FROM post JOIN penulis 
+                                    WHERE post.idpenulis = penulis.idpenulis, 
+                                    post.idkategori = $idkategori 
+                                    ORDER BY post.tgl_update DESC");
+
+        $indeks = 0;
+        $result = array();
+
+        foreach ($query->result_array() as $row) {
+            $result[$indeks++] = $row;
+        }
+
+        return $result;
     }
 }

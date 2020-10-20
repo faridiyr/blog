@@ -28,7 +28,12 @@
      <div class="container">
 
          <div class="row">
-             <form action="<?= site_url('Post/by_kategori') ?>" class="form-inline" method="POST">
+             <?php
+                foreach ($post as $item) { ?>
+                 <form action="<?= site_url('Post/by_kategori' . $item['idkategori']) ?>" class="form-inline" method="POST">
+                 <?php
+                }
+                    ?>
                  <div class="form-group mb-2">
                      <h4>Kategori :&emsp;</h4>
                      <select class="form-control" name="kategori" id="kategori">
@@ -36,12 +41,13 @@
                          <?php
                             foreach ($kategori as $item) {
                                 echo '<option value="' . $item['idkategori'] . '">' . $item['nama'] . '</option>';
-                            } ?>
+                            }
+                            ?>
                      </select>
                      &emsp;
-                     <button type="button" href="<?= site_url('Post/by_kategori') ?>" class="btn btn-primary">Apply</button>
+                     <button type="button" class="btn btn-primary">Apply</button>
                  </div>
-             </form>
+                 </form>
          </div>
          <br>
          <div class="row">
