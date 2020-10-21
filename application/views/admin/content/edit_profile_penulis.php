@@ -25,3 +25,54 @@
              <?php echo $this->session->flashdata('notification_gagal'); ?>
          </div>
      <?php } ?>
+
+     <!-- Basic Card Example -->
+     <div class="card shadow mb-4" style="max-width: 800px;">
+         <div class="card-header py-3">
+             <h6 class="m-0 font-weight-bold text-primary"><?= $title ?></h6>
+         </div>
+         <div class="card-body">
+             <form action="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" method="POST">
+                 <div class="form-group row">
+                     <label for="nama" class="col-sm-2 col-form-label">Nama:</label>
+                     <div class="col-sm-10">
+                         <input type="text" class="form-control" id="name" name="name" value="<?= $user->nama ?>">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+                     <div class="col-sm-10">
+                         <input type="email" readonly class="form-control-plaintext" id="email" name="email" value="<?= $user->email ?>">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="nama" class="col-sm-2 col-form-label">Alamat:</label>
+                     <div class="col-sm-10">
+                         <input type="text" class="form-control" id="address" name="address" value="<?= $user->alamat ?>">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="nama" class="col-sm-2 col-form-label">Kota:</label>
+                     <div class="col-sm-10">
+                         <input type="text" class="form-control" id="city" name="city" value="<?= $user->kota ?>">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="nama" class="col-sm-2 col-form-label">No Telepon:</label>
+                     <div class="col-sm-10">
+                         <input type="text" class="form-control" id="phone" name="phone" value="<?= $user->no_telp ?>">
+                     </div>
+                 </div>
+                 <button type="submit" href="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" class="btn btn-primary">
+                     Simpan
+                 </button>
+             </form>
+         </div>
+     </div>
+     <br>
+
+ </div>
+ <!-- /.container-fluid -->
+
+ </div>
+ <!-- End of Main Content -->
