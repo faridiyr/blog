@@ -29,4 +29,33 @@ class Kelola_Profile_Admin extends CI_Controller
         $this->load->view('admin/content/profile_admin', $data);
         $this->load->view('admin/template/footer');
     }
+
+
+    public function edit_profile()
+    {
+        $idadmin = $this->session->userdata('idadmin');
+
+        $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
+
+        $data['title'] = 'My Profile';
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/navbar');
+        $this->load->view('admin/content/edit_profile_admin', $data);
+        $this->load->view('admin/template/footer');
+    }
+
+    public function edit_password()
+    {
+        $idadmin = $this->session->userdata('idadmin');
+
+        $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
+
+        $data['title'] = 'My Profile';
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/navbar');
+        $this->load->view('admin/content/edit_password_admin', $data);
+        $this->load->view('admin/template/footer');
+    }
 }
