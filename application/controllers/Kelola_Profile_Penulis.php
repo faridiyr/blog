@@ -36,7 +36,7 @@ class Kelola_Profile_Penulis extends CI_Controller
 
         $data['user'] = $this->Profile_Model->get_data_penulis_session($idpenulis)->row();
 
-        $data['title'] = 'My Profile';
+        $data['title'] = 'Edit Profile';
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/sidebar_penulis');
         $this->load->view('admin/template/navbar');
@@ -50,7 +50,7 @@ class Kelola_Profile_Penulis extends CI_Controller
 
         $data['user'] = $this->Profile_Model->get_data_penulis_session($idpenulis)->row();
 
-        $data['title'] = 'My Profile';
+        $data['title'] = 'Change Password';
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/sidebar_penulis');
         $this->load->view('admin/template/navbar');
