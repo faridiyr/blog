@@ -15,8 +15,6 @@ class Kelola_Post extends CI_Controller
 
         $this->load->model('Post_Model');
         $this->load->model('Kategori_Model');
-        $this->load->helper('url');
-        $this->load->helper('form');
         $this->load->library('form_validation');
     }
 
@@ -37,7 +35,7 @@ class Kelola_Post extends CI_Controller
     {
         if (isset($_POST['tambah'])) {
             $this->form_validation->set_rules('judul', 'Judul Post', 'required');
-            $this->form_validation->set_rules('tgl_insert', 'Tanggal', 'required');
+            $this->form_validation->set_rules('tanggal_insert', 'Tanggal', 'required');
 
             //Mengambil filename gambar untuk disimpan
             $nmfile = "file_" . time();
@@ -46,14 +44,14 @@ class Kelola_Post extends CI_Controller
             $config['max_size'] = '2048'; //kb
             $config['file_name'] = $nmfile;
 
-            $date = date_create($this->input->post('tgl_insert'));
+            $date = date_create($this->input->post('tanggal_insert'));
             $dateformat = date_format($date, "Y-m-d");
 
             $isi = $this->input->post('editor1');
             $idpenulis = $this->session->userdata('idpenulis');
 
             if ($isi == NULL) {
-                $this->session->set_flashdata('notification_gagal', 'Post gagal ditambahkan, Deskripsi tidak boleh kosong');
+                $this->session->set_flashdata('notificatio_gagal', 'Post gagal ditambahkan, Deskripsi tidak boleh kosong');
                 redirect('Kelola_Post');
             } elseif (($this->form_validation->run() == TRUE) && (!empty($_FILES['file_gambar']['name']))) {
                 $gbr = NULL;
@@ -63,8 +61,8 @@ class Kelola_Post extends CI_Controller
                     'idkategori' => $this->input->post('kategori'),
                     'isi_post' => $isi,
                     'file_gambar' => NULL,
-                    'tgl_insert' => $dateformat,
-                    'tgl_update' => $dateformat,
+                    'tanggal_insert' => $dateformat,
+                    'tanggal_update' => $dateformat,
                     'idpenulis' => $idpenulis
                 );
                 $data['post'] = $post;

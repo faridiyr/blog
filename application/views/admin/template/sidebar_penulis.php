@@ -44,19 +44,19 @@
 
       <!-- Nav Item -->
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="<?= site_url('Kelola_Profile_Penulis') ?>">
               <i class="fas fa-user"></i>
               <span>My Profile</span></a>
       </li>
       <!-- Nav Item -->
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>">
               <i class="fas fa-user-edit"></i>
               <span>Edit Profile</span></a>
       </li>
       <!-- Nav Item -->
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="<?= site_url('Kelola_Profile_Penulis/edit_password') ?>">
               <i class="fas fa-key"></i>
               <span>Change Password</span></a>
       </li>

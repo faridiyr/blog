@@ -33,7 +33,7 @@
                 </div>
             <?php } ?>
 
-            <form action="<?= site_url('Kelola_Post/tambah_post/') ?>" autocomplete="on" method="POST">
+            <form action="<?= site_url('Kelola_Post/tambah_post/') ?>" autocomplete="on" enctype="multipart/form-data" method="POST">
                 <div class="form-group row">
                     <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                     <div class="col-sm-10">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="isi" class="col-sm-2 col-form-label">Isi</label>
+                    <label for="isi" class="col-sm-2 col-form-label">Isi <span><small style="color: red; padding-left: 10px">* Tidak boleh kosong</small></span></label>
                     <div class="col-sm-10">
                         <textarea id="editor1" name="editor1" rows="5" type="text" required></textarea>
                     </div>
