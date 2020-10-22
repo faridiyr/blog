@@ -31,7 +31,6 @@
              <div class="col-12">
                  <div class="section-heading text-center">
                      <h2>Team of Experts</h2>
-                     <p>We stay on top of our industry by being experts in yours.</p>
                  </div>
              </div>
          </div>
