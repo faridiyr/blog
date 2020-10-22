@@ -43,7 +43,7 @@
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>faridi.jpg" alt="">
+                     <img src="<?= base_url('assets/front/team/') ?>faridi.jpg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
@@ -58,7 +58,7 @@
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>ket.jpg" alt="">
+                     <img src="<?= base_url('assets/front/team/') ?>ket.jpg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
@@ -75,7 +75,7 @@
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>deessy.jpeg" alt="">
+                     <img src="<?= base_url('assets/front/team/') ?>deessy.jpeg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
@@ -91,7 +91,7 @@
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>indah.jpeg" alt="">
+                     <img src="<?= base_url('assets/front/team/') ?>indah.jpeg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
