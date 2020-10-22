@@ -34,7 +34,7 @@
               <span>Data Kategori</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="<?= site_url('Kelola_Penulis') ?>">
               <i class="fas fa-users"></i>
               <span>Data Penulis</span></a>
       </li>
