@@ -146,6 +146,15 @@ class Kelola_Post extends CI_Controller
     {
         $idpost = $_POST['idpost'];
 
+        //load data folder
+        $data['post'] = $this->Post_Model->select_post_by_id($idpost)->row();
+        $file = $data['post']->file_gambar;
+
+        //hapus file dari folder
+        $filehapus = './assets/upload/post/' . $file;
+        unlink($filehapus);
+
+        //  hapus dari database
         $this->Post_Model->delete_post($idpost);
     }
 }

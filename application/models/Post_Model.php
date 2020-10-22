@@ -176,4 +176,14 @@ class Post_Model extends CI_Model
         $this->db->where('idpost', $idpost);
         $this->db->delete('post');
     }
+
+    function select_post_by_id($idpost)
+    {
+        $this->db->select('*');
+        $this->db->from('post');
+        $this->db->join('kategori', 'kategori.idkategori = post.idkategori');
+        $this->db->where('idpost', $idpost);
+
+        return $this->db->get();
+    }
 }
