@@ -125,7 +125,26 @@ class Kelola_Profile_Admin extends CI_Controller
 
         $idadmin = $this->session->userdata('id');
 
-        $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
+        $data['password'] = $this->Profile_Model->get_password_admin($idadmin)->row();
+
+        $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim|min_length[4]|max_length[16]');
+        $this->form_validation->set_rules('new_password', 'New Password', 'required|trim|min_length[4]|max_length[16]');
+        $this->form_validation->set_rules('retype_password', 'Retype Password', 'required|trim|matches[new_password]');
+
+        $data_update_password = array(
+            'password' => md5($this->input->post('new_password'))
+        );
+
+        if ($this->form_validation->run() == true) {
+            if (md5($this->input->post('current_password')) != $this->input->post('password')) {
+                $this->session->set_flashdata('notification_gagal', 'Password gagal diubah, Current Password salah!');
+                redirect('Kelola_Profile_Admin/edit_password');
+            } else {
+                $this->db->update('admin', $data_update_password, array('idadmin' => $idadmin));
+                $this->session->set_flashdata('notification_berhasil', 'Password berhasil diubah!');
+                redirect('Kelola_Profile_Admin/edit_password');
+            }
+        }
 
         $data['title'] = 'My Profile';
         $this->load->view('admin/template/header', $data);

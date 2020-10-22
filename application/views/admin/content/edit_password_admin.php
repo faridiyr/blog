@@ -32,33 +32,30 @@
              <h6 class="m-0 font-weight-bold text-primary"><?= $title ?></h6>
          </div>
          <div class="card-body">
-             <form action="<?= site_url('Kelola_Profile_Admin/edit_profile') ?>" method="POST" autocomplete="on" enctype="multipart/form-data">
+             <form action="<?= site_url('Kelola_Profile_Admin/edit_password') ?>" method="POST" autocomplete="on" enctype="multipart/form-data">
+                 <input hidden type="text" class="form-control" id="password" name="password" value="<?= $password->password ?>">
                  <div class="form-group row">
-                     <label for="nama" class="col-sm-2 col-form-label">Nama:</label>
+                     <label for="nama" class="col-sm-2 col-form-label">Current Password:</label>
                      <div class="col-sm-10">
-                         <input type="text" class="form-control" id="name" name="name" value="<?= $user->nama ?>" required maxlength="50" minlength="4">
+                         <input type="password" class="form-control" id="current_password" name="current_password" value="<?= set_value('current_password'); ?>">
+                         <?= form_error('current_password', '<small class="text-danger">', '</small>') ?>
                      </div>
                  </div>
                  <div class="form-group row">
-                     <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+                     <label for="nama" class="col-sm-2 col-form-label">New Password:</label>
                      <div class="col-sm-10">
-                         <input type="email" class="form-control" id="email" name="email" value="<?= $user->email ?>" required>
+                         <input type="password" class="form-control" id="new_password" name="new_password" value="<?= set_value('new_password'); ?>">
+                         <?= form_error('new_password', '<small class="text-danger">', '</small>') ?>
                      </div>
                  </div>
                  <div class="form-group row">
-                     <label for="gambar" class="col-sm-2 col-form-label">File Gambar Lama:</label>
+                     <label for="nama" class="col-sm-2 col-form-label">Retype Password:</label>
                      <div class="col-sm-10">
-                         <img src="<?= base_url('assets/upload/avatar/'), $user->file_gambar ?>" style="max-width: 200px; max-height: 200px">
-                         <input type="text" readonly class="form-control-plaintext" id="file_gambar_lama" name="file_gambar_lama" value="<?= $user->file_gambar ?>">
+                         <input type="password" class="form-control" id="retype_password" name="retype_password" value="<?= set_value('retype_password'); ?>">
+                         <?= form_error('retype_password', '<small class="text-danger">', '</small>') ?>
                      </div>
                  </div>
-                 <div class="form-group row">
-                     <label for="gambar" class="col-sm-2 col-form-label">File Gambar Baru:</label>
-                     <div class="col-sm-10">
-                         <input type="file" class="form-control-file" id="file_gambar_baru" name="file_gambar_baru">
-                     </div>
-                 </div>
-                 <button type="submit" name="simpan" href="<?= site_url('Kelola_Profile_Admin/edit_profile') ?>" class="btn btn-primary">
+                 <button type="submit" name="simpan" href="<?= site_url('Kelola_Profile_Admin/edit_password') ?>" class="btn btn-primary">
                      Simpan
                  </button>
              </form>
