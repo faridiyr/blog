@@ -26,4 +26,22 @@ class Profile_Model extends CI_Model
 
         return $this->db->get();
     }
+
+    function get_password_penulis($id)
+    {
+        $this->db->select('password');
+        $this->db->from('penulis');
+        $this->db->where('idpenulis', $id);
+
+        return $this->db->get();
+    }
+
+    function get_password_admin($id)
+    {
+        $this->db->select('password');
+        $this->db->from('admin');
+        $this->db->where('idadmin', $id);
+
+        return $this->db->get();
+    }
 }
