@@ -18,7 +18,17 @@ class Kelola_Profile_Admin extends CI_Controller
 
     public function index()
     {
-        $idadmin = $this->session->userdata('idadmin');
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
+        $idadmin = $this->session->userdata('id');
 
         $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
 
@@ -33,7 +43,17 @@ class Kelola_Profile_Admin extends CI_Controller
 
     public function edit_profile()
     {
-        $idadmin = $this->session->userdata('idadmin');
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
+        $idadmin = $this->session->userdata('id');
 
         $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
 
@@ -47,7 +67,17 @@ class Kelola_Profile_Admin extends CI_Controller
 
     public function edit_password()
     {
-        $idadmin = $this->session->userdata('idadmin');
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
+        $idadmin = $this->session->userdata('id');
 
         $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
 

@@ -16,9 +16,15 @@ class Dashboard_Admin extends CI_Controller
 
     public function index()
     {
-        // $data = $this->session->userdata();
-        // var_dump($data);
-        // die;
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
 
         $data['title'] = 'Dashboard';
         $this->load->view('admin/template/header', $data);

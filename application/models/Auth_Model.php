@@ -28,4 +28,22 @@ class Auth_Model extends CI_Model
 
         return $this->db->get();
     }
+
+    function get_data_penulis_session($id)
+    {
+        $this->db->select('*');
+        $this->db->from('penulis');
+        $this->db->where('idpenulis', $id);
+
+        return $this->db->get();
+    }
+
+    function get_data_admin_session($id)
+    {
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('idadmin', $id);
+
+        return $this->db->get();
+    }
 }

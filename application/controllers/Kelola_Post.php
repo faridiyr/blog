@@ -22,7 +22,18 @@ class Kelola_Post extends CI_Controller
 
     public function index()
     {
-        $idpenulis = $this->session->userdata('idpenulis');
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
+        $idpenulis = $this->session->userdata('id');
+
         $data['post'] = $this->Post_Model->get_all_post_by_penulis($idpenulis);
 
         $data['title'] = 'Kelola Post';
@@ -35,6 +46,16 @@ class Kelola_Post extends CI_Controller
 
     public function tambah_post()
     {
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
         if (isset($_POST['tambah'])) {
             $this->form_validation->set_rules('judul', 'Judul Post', 'required');
             $this->form_validation->set_rules('tgl_insert', 'Tanggal', 'required');
@@ -50,7 +71,7 @@ class Kelola_Post extends CI_Controller
             $dateformat = date_format($date, "Y-m-d");
 
             $isi = $this->input->post('editor1');
-            $idpenulis = $this->session->userdata('idpenulis');
+            $idpenulis = $this->session->userdata('id');
 
             if ($isi == NULL) {
                 $this->session->set_flashdata('notification_gagal', 'Post gagal ditambahkan, Deskripsi tidak boleh kosong');

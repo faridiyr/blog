@@ -27,12 +27,12 @@
      <?php } ?>
 
      <!-- Basic Card Example -->
-     <div class="card shadow mb-4" style="max-width: 800px;">
+     <div class="card shadow mb-4" style="max-width: 1200px;">
          <div class="card-header py-3">
              <h6 class="m-0 font-weight-bold text-primary"><?= $title ?></h6>
          </div>
          <div class="card-body">
-             <form action="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" method="POST">
+             <form action="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" method="POST" autocomplete="on" enctype="multipart/form-data">
                  <div class="form-group row">
                      <label for="nama" class="col-sm-2 col-form-label">Nama:</label>
                      <div class="col-sm-10">
@@ -63,7 +63,20 @@
                          <input type="text" class="form-control" id="phone" name="phone" value="<?= $user->no_telp ?>">
                      </div>
                  </div>
-                 <button type="submit" href="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" class="btn btn-primary">
+                 <div class="form-group row">
+                     <label for="gambar" class="col-sm-2 col-form-label">File Gambar Lama:</label>
+                     <div class="col-sm-10">
+                         <img src="<?= base_url('assets/upload/avatar/'), $user->file_gambar ?>" style="max-width: 200px; max-height: 200px">
+                         <input type="text" readonly class="form-control-plaintext" id="file_gambar_lama" name="file_gambar_lama" value="<?= $user->file_gambar ?>">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="gambar" class="col-sm-2 col-form-label">File Gambar Baru:</label>
+                     <div class="col-sm-10">
+                         <input type="file" class="form-control-file" id="file_gambar_baru" name="file_gambar_baru">
+                     </div>
+                 </div>
+                 <button type="submit" name="simpan" href="<?= site_url('Kelola_Profile_Penulis/edit_profile') ?>" class="btn btn-primary">
                      Simpan
                  </button>
              </form>

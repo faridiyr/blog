@@ -39,11 +39,11 @@ class Auth extends CI_Controller
                 }
                 if ($status == true) {
                     $data = array(
-                        'idadmin' => $admin['idadmin'],
+                        'id' => $admin['idadmin'],
                         'nama' => $admin['nama'],
                         'email' => $admin['email'],
                         'password' => $admin['password'],
-                        'gambar' => $admin['file_gambar'],
+                        'file_gambar' => $admin['file_gambar'],
                         'level' => 'admin',
                         'login' => true
                     );
@@ -62,11 +62,11 @@ class Auth extends CI_Controller
                 }
                 if ($status == true) {
                     $data = array(
-                        'idpenulis' => $penulis['idpenulis'],
+                        'id' => $penulis['idpenulis'],
                         'nama' => $penulis['nama'],
                         'email' => $penulis['email'],
                         'password' => $penulis['password'],
-                        'gambar' => $penulis['file_gambar'],
+                        'file_gambar' => $penulis['file_gambar'],
                         'level' => 'penulis',
                         'login' => true
                     );

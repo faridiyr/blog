@@ -19,6 +19,16 @@ class Kelola_Kategori extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
+
         $data['kategori'] = $this->Kategori_Model->get_all_kategori();
 
         $data['title'] = 'Kelola Kategori';
