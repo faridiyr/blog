@@ -90,7 +90,7 @@ class Kelola_Profile_Penulis extends CI_Controller
                         $gbr = $this->upload->data();
                         $data_update_profile['file_gambar'] = $gbr['file_name'];
                     } else {
-                        $this->session->set_flashdata('notification_gagal', 'Akun gagal berhasil diubah!');
+                        $this->session->set_flashdata('notification_gagal', 'Akun gagal diubah!');
                         $iserror = true;
                     }
                 }
@@ -100,7 +100,7 @@ class Kelola_Profile_Penulis extends CI_Controller
                     redirect('Kelola_Profile_Penulis');
                 }
             } else {
-                $this->session->set_flashdata('notification_gagal', 'Akun gagal berhasil diubah!');
+                $this->session->set_flashdata('notification_gagal', 'Akun gagal diubah!');
                 redirect('Kelola_Profile_Penulis/edit_profile');
             }
         } else {

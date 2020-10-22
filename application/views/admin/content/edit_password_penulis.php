@@ -36,7 +36,7 @@
                  <div class="form-group row">
                      <label for="nama" class="col-sm-2 col-form-label">Nama:</label>
                      <div class="col-sm-10">
-                         <input type="text" class="form-control" id="name" name="name" value="<?= $user->nama ?>" required maxlength="50" minlength="4">
+                         <input type="text" class="form-control" id="name" name="name" value="<?= $user->nama ?>">
                      </div>
                  </div>
                  <div class="form-group row">
@@ -48,19 +48,19 @@
                  <div class="form-group row">
                      <label for="nama" class="col-sm-2 col-form-label">Alamat:</label>
                      <div class="col-sm-10">
-                         <input type="text" class="form-control" id="address" name="address" value="<?= $user->alamat ?>" required minlength="4" maxlength="100">
+                         <input type="text" class="form-control" id="address" name="address" value="<?= $user->alamat ?>">
                      </div>
                  </div>
                  <div class="form-group row">
                      <label for="nama" class="col-sm-2 col-form-label">Kota:</label>
                      <div class="col-sm-10">
-                         <input type="text" class="form-control" id="city" name="city" value="<?= $user->kota ?>" required minlength="4" maxlength="100">
+                         <input type="text" class="form-control" id="city" name="city" value="<?= $user->kota ?>">
                      </div>
                  </div>
                  <div class="form-group row">
                      <label for="nama" class="col-sm-2 col-form-label">No Telepon:</label>
                      <div class="col-sm-10">
-                         <input type="text" class="form-control" id="phone" name="phone" value="<?= $user->no_telp ?>" required>
+                         <input type="text" class="form-control" id="phone" name="phone" value="<?= $user->no_telp ?>">
                      </div>
                  </div>
                  <div class="form-group row">
