@@ -43,156 +43,66 @@
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/18.jpg" alt="">
+                     <img src="<?= base_url('assets/homepage/') ?>faridi.jpg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
+                         <h4>Faridi Yr</h4>
+                         <p>NIM: 24060117120017</br> Email: faridiyr@students.undip.ac.id </br>Line: faridi_yr99</br>No.handphone: 082285850436</br>Instagram: faridiyr.</p>
                      </div>
                      <!-- Social Info -->
                      <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                         <a href="https://www.instagram.com/faridiyr/" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
                      </div>
                  </div>
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/19.jpg" alt="">
+                     <img src="<?= base_url('assets/homepage/') ?>ket.jpg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
+                         <h4>Cathrine Cania</h4>
+                         <p>NIM: 24060118120002 </br> Email: cathrinecania@students.undip.ac.id </br>Line: cathrine_cania</br>No.handphone: 0895358448904</br>Instagram: cathrinecania.</p>
                      </div>
                      <!-- Social Info -->
                      <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                         <a href="https://web.facebook.com/cathrine.cania/" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                         <a href="https://www.instagram.com/cathrinecania/" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+                         <a href="https://www.youtube.com/channel/UCdnr-Dvi5jksRkfDB9Z3nwgs" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
                      </div>
                  </div>
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/20.jpg" alt="">
+                     <img src="<?= base_url('assets/homepage/') ?>deessy.jpeg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
+                         <h4>Dessy Rahmawati Chairullina</h4>
+                         <p>NIM: 24060118120040 </br> Email: desyrce@gmail.com </br>Line: dessyrc</br>No.handphone: 082142010541</br>Instagram: dessyrc.</p>
                      </div>
                      <!-- Social Info -->
                      <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                         <a href="https://www.instagram.com/dessyrc/" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+                         <a href="https://www.youtube.com/channel/UCQtT5bJYFEByzXmjuTz0oBg?view_as=subscriber" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
                      </div>
                  </div>
 
                  <!-- Single Team Slide -->
                  <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/21.jpg" alt="">
+                     <img src="<?= base_url('assets/homepage/') ?>indah.jpeg" alt="">
                      <!-- Overlay Effect -->
                      <div class="overlay-effect">
                          <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
+                         <h4>Wahyu Indah Puwanti</h4>
+                         <p>NIM: 24060118120044 </br> Email: wahyuindah@students.undip.ac.id </br>Line: wyundah</br>Instagram: wyundah.</p>
                      </div>
                      <!-- Social Info -->
                      <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                         <a href="https://www.instagram.com/wyundah/" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
                      </div>
                  </div>
-
-                 <!-- Single Team Slide -->
-                 <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/18.jpg" alt="">
-                     <!-- Overlay Effect -->
-                     <div class="overlay-effect">
-                         <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                     </div>
-                     <!-- Social Info -->
-                     <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                     </div>
-                 </div>
-
-                 <!-- Single Team Slide -->
-                 <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/19.jpg" alt="">
-                     <!-- Overlay Effect -->
-                     <div class="overlay-effect">
-                         <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                     </div>
-                     <!-- Social Info -->
-                     <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                     </div>
-                 </div>
-
-                 <!-- Single Team Slide -->
-                 <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/20.jpg" alt="">
-                     <!-- Overlay Effect -->
-                     <div class="overlay-effect">
-                         <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                     </div>
-                     <!-- Social Info -->
-                     <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                     </div>
-                 </div>
-
-                 <!-- Single Team Slide -->
-                 <div class="single-team-slide">
-                     <img src="<?= base_url('assets/homepage/') ?>img/bg-img/21.jpg" alt="">
-                     <!-- Overlay Effect -->
-                     <div class="overlay-effect">
-                         <h6>DESIGNER</h6>
-                         <h4>Roger Black</h4>
-                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                     </div>
-                     <!-- Social Info -->
-                     <div class="team-social-info">
-                         <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                         <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                         <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                         <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                         <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                     </div>
-                 </div>
-
              </div>
          </div>
      </div>

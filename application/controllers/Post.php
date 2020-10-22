@@ -26,7 +26,7 @@ class Post extends CI_Controller
         $this->load->view('homepage/template/footer');
     }
 
-    public function by_kategori()
+    public function by_kategori($idkategori)
     {
         // $this->form_validation->set_rules('kategori', 'Kategori', 'required');
 
