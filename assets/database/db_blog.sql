@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2020 at 01:59 PM
+-- Generation Time: Oct 22, 2020 at 06:19 AM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -61,8 +61,7 @@ CREATE TABLE `kategori` (
 INSERT INTO `kategori` (`idkategori`, `nama`) VALUES
 (1, 'Teknologi'),
 (2, 'Kesehatan'),
-(3, 'Otomotif'),
-(6, 'tes video');
+(3, 'Otomotif');
 
 -- --------------------------------------------------------
 
@@ -86,7 +85,8 @@ CREATE TABLE `penulis` (
 --
 
 INSERT INTO `penulis` (`idpenulis`, `nama`, `password`, `alamat`, `kota`, `email`, `no_telp`, `file_gambar`) VALUES
-(4, 'Faridi Yr', '81dc9bdb52d04dc20036dbd8313ed055', 'Tembalang', 'Semarang', 'faridiyr@gmail.com', '1234567890', 'default_penulis.png');
+(4, 'Faridi Yr', '81dc9bdb52d04dc20036dbd8313ed055', 'Tembalang', 'Semarang', 'faridiyr@gmail.com', '1234567890', 'file_1603337294.jpeg'),
+(5, 'cathrine', '81dc9bdb52d04dc20036dbd8313ed055', 'semarang', 'semarang kota', 'cath@gmail.com', '123412341234', 'file_1603340354.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,19 +158,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `penulis`
 --
 ALTER TABLE `penulis`
-  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
