@@ -76,12 +76,14 @@
 
                                 </td>
                                 <td style="width: 200px;">
+
                                     <!-- Tombol Edit -->
-                                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-kategori<?= $item['idpost'] ?>">
-                                        <span btn-icon-left>
-                                            <i class="fa fa-edit"></i>
-                                        </span>
-                                        Edit</button>
+                                    <a href="<?= site_url('Kelola_Post/edit_post/' . $item['idpost']) ?>">
+                                        <button class="btn btn-info btn-sm">
+                                            <span btn-icon-left>
+                                                <i class="fa fa-edit"></i>
+                                            </span>
+                                            Edit</button></a>
 
                                     <!-- Tombol Hapus -->
                                     <button onclick="delete_repositori_ajax(<?= $item['idpost'] ?>)" type="submit" class="btn btn-danger btn-sm">

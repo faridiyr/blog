@@ -101,6 +101,8 @@ class Kelola_Post extends CI_Controller
                 } else {
                     $this->session->set_flashdata('notification_gagal', 'Post gagal ditambahkan, cek type file dan ukuran file yang anda upload');
 
+                    $data['post'] = $this->Post_Model->get_all_post_by_penulis($idpenulis);
+
                     $data['kategori'] = $this->Kategori_Model->get_all_kategori();
 
                     $data['title'] = 'Tambah Post';
@@ -126,20 +128,108 @@ class Kelola_Post extends CI_Controller
         }
     }
 
-    public function edit_kategori()
+    public function edit_post($idpost)
     {
-        $idkategori = $this->input->post('idkategori');
+        if ($this->session->userdata('level') == 'penulis') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_penulis_session($id)->row();
+        } elseif ($this->session->userdata('level') == 'admin') {
+            $this->load->model('Auth_Model');
+            $id = $this->session->userdata('id');
+            $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
+        }
 
-        $this->form_validation->set_rules('nama', 'Nama Kategori', 'required');
+        if (isset($_POST['simpan'])) {
+            $this->form_validation->set_rules('judul', 'Judul Post', 'required');
 
-        $data_update_kategori = array(
-            'nama' => $this->input->post('nama')
-        );
-        $data['kategori'] = $data_update_kategori;
+            //Mengambil filename gambar untuk disimpan
+            $nmfile = "file_" . time();
+            $config['upload_path'] = './assets/upload/post/';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+            $config['max_size'] = '2048'; //kb
+            $config['file_name'] = $nmfile;
 
-        $this->db->update('kategori', $data_update_kategori, array('idkategori' => $idkategori));
-        $this->session->set_flashdata('notification_berhasil', 'Kategori berhasil ditambahkan');
-        redirect('Kelola_Kategori');
+            $date = date_create($this->input->post('tgl_update'));
+            $dateformat = date_format($date, "Y-m-d");
+
+            $idpenulis = $this->session->userdata('id');
+
+            $isi = $this->input->post('editor1');
+
+            $data_update_post = array(
+                'judul' => $this->input->post('judul'),
+                'idkategori' => $this->input->post('kategori'),
+                'isi_post' => $isi,
+                'tgl_update' => $dateformat,
+                'file_gambar' => $this->input->post('file_gambar_lama'),
+            );
+
+            if ($isi == NULL) {
+                $this->session->set_flashdata('notification_gagal', 'Post gagal ditambahkan, Deskripsi tidak boleh kosong');
+                redirect('Kelola_Post');
+            } elseif (($this->form_validation->run() == TRUE)) {
+                $gbr = NULL;
+                $iserror = false;
+                if ((!empty($_FILES['file_gambar_baru']['name']))) {
+                    $this->load->library('upload', $config);
+                    if ($this->upload->do_upload('file_gambar_baru')) {
+                        $gbr = $this->upload->data();
+                        $data_update_post['file_gambar'] = $gbr['file_name'];
+
+                        //hapus file dari folder
+                        $data_gambar_lama = $this->input->post('file_gambar_lama');
+                        $filehapus = './assets/upload/post/' . $data_gambar_lama;
+                        unlink($filehapus);
+                    } else {
+                        $this->session->set_flashdata('notification_gagal', 'Post gagal ditambahkan, cek type file dan ukuran file yang anda upload');
+
+                        $data['post'] = $this->Post_Model->get_all_post_by_penulis($idpenulis);
+
+                        $data['kategori'] = $this->Kategori_Model->get_all_kategori();
+
+                        $data['title'] = 'Tambah Post';
+                        $this->load->view('admin/template/header', $data);
+                        $this->load->view('admin/template/sidebar_penulis');
+                        $this->load->view('admin/template/navbar');
+                        $this->load->view('admin/content/kelola_post', $data);
+                        $this->load->view('admin/template/footer');
+                    }
+                }
+                if (!$iserror) {
+                    $this->db->update('post', $data_update_post, array('idpost' => $idpost));
+                    $this->session->set_flashdata('notification_berhasil', 'Post berhasil diperbarui!');
+                    redirect('Kelola_Post');
+                }
+            }
+        } else {
+            $data['edit_post'] = $this->Post_Model->select_post_by_id($idpost)->row();
+
+            $date = $data['edit_post']->tgl_update;
+
+            $dateformat_database = date("Y-m-d", strtotime($date));
+
+            $data_post = array(
+                'idpost' => $data['edit_post']->idpost,
+                'judul' => $data['edit_post']->judul,
+                'idkategori' => $data['edit_post']->idkategori,
+                'isi_post' => $data['edit_post']->isi_post,
+                'tgl_update' => $dateformat_database,
+                'file_gambar' => $data['edit_post']->file_gambar,
+                'idpenulis' => $data['edit_post']->idpenulis
+            );
+
+            $data['post'] = $data_post;
+
+            $data['kategori'] = $this->Kategori_Model->get_all_kategori();
+
+            $data['title'] = 'Edit Post';
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/sidebar_penulis');
+            $this->load->view('admin/template/navbar');
+            $this->load->view('admin/content/edit_post', $data);
+            $this->load->view('admin/template/footer');
+        }
     }
 
     public function delete_post()
