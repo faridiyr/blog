@@ -73,7 +73,7 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                     redirect('Dashboard_Penulis');
                 } else {
-                    $this->session->set_flashdata('notification', '<div class="alert alert-danger">Email dan Password Penulis tidak ditemukan!</div>');
+                    $this->session->set_flashdata('notification', '<div class="alert alert-danger">Email dan Password tidak ditemukan!</div>');
                     redirect('Auth/index');
                 }
             }

@@ -78,7 +78,7 @@ class Kelola_Kategori extends CI_Controller
         $data['kategori'] = $data_update_kategori;
 
         $this->db->update('kategori', $data_update_kategori, array('idkategori' => $idkategori));
-        $this->session->set_flashdata('notification_berhasil', 'Kategori berhasil ditambahkan');
+        $this->session->set_flashdata('notification_berhasil', 'Kategori berhasil diubah');
         redirect('Kelola_Kategori');
     }
 
