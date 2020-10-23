@@ -102,7 +102,7 @@ class Kelola_Profile_Admin extends CI_Controller
         } else {
             $data['user'] = $this->Profile_Model->get_data_admin_session($idadmin)->row();
 
-            $data['title'] = 'My Profile';
+            $data['title'] = 'Edit Profile';
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/template/sidebar');
             $this->load->view('admin/template/navbar');
@@ -146,7 +146,7 @@ class Kelola_Profile_Admin extends CI_Controller
             }
         }
 
-        $data['title'] = 'My Profile';
+        $data['title'] = 'Change Password';
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/sidebar');
         $this->load->view('admin/template/navbar');
