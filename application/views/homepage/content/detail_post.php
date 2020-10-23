@@ -52,6 +52,64 @@
                                 <p>
                                     <?= $post->isi_post ?>
                                 </p>
+
+                                <!-- Post Catagories & Post Share -->
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <!-- Post Catagories -->
+                                    <div class="post-catagories">
+                                        <ul class="d-flex flex-wrap align-items-center">
+                                            <li><a href="#"><?= $post->nama_kategori ?></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Comments Area -->
+                                <div class="comment_area mb-50 clearfix">
+                                    <h5 class="title"><?= $total_comment ?>&ensp;Comments</h5>
+                                    <ol>
+                                        <?php foreach ($comment as $item) {
+                                            $date = $item['tgl_update'];
+                                            $date_format = date("d M Y H:i", strtotime($date));
+                                        ?>
+                                            <!-- Single Comment Area -->
+                                            <li class="single_comment_area">
+                                                <!-- Comment Content -->
+                                                <div class="comment-content d-flex">
+                                                    <!-- Comment Author -->
+                                                    <div class="comment-author">
+                                                        <img src="<?= base_url('assets/upload/avatar/' . $item['gambar']) ?>" alt="author">
+                                                    </div>
+                                                    <!-- Comment Meta -->
+                                                    <div class="comment-meta">
+                                                        <a href="#" class="post-date"><?= $date_format ?></a>
+                                                        <h5><?= $item['nama'] ?></h5>
+                                                        <p>
+                                                            <?= $item['isi'] ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php } ?>
+                                    </ol>
+                                </div>
+
+                                <!-- Leave A Reply -->
+                                <div class="uza-contact-form">
+                                    <h2 class="mb-4">Leave A Comment</h2>
+
+                                    <!-- Form -->
+                                    <form action="" method="post">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" name="post_comment" class="btn uza-btn btn-3 mt-15">Post Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
 

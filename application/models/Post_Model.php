@@ -119,9 +119,11 @@ class Post_Model extends CI_Model
                             post.tgl_insert as tgl_insert, 
                             post.tgl_update as tgl_update, 
                             penulis.file_gambar as gambar_penulis,
-                            penulis.nama as nama');
+                            penulis.nama as nama,
+                            kategori.nama as nama_kategori');
         $this->db->from('post');
         $this->db->join('penulis', 'post.idpenulis = penulis.idpenulis');
+        $this->db->join('kategori', 'post.idkategori = kategori.idkategori');
         $this->db->where('idpost', $idpost);
 
         return $this->db->get();
@@ -204,11 +206,35 @@ class Post_Model extends CI_Model
         return $count;
     }
 
-    function get_total_post_by_kategori($key)
+    function get_total_comment_by_post($key)
     {
-        $query = $this->db->query("SELECT * FROM post WHERE idkategori = $key");
+        $query = $this->db->query("SELECT * FROM komentar WHERE idpost = $key");
         $count = $query->num_rows();
 
         return $count;
+    }
+
+    function get_comment($key)
+    {
+        $query = $this->db->query("SELECT komentar.idkomentar as idkomentar, 
+                                    komentar.idpost as idpost, 
+                                    komentar.idpenulis as idpenulis, 
+                                    komentar.isi as isi, 
+                                    komentar.tgl_update as tgl_update, 
+                                    penulis.nama as nama, 
+                                    penulis.file_gambar as gambar
+                                    FROM komentar 
+                                    JOIN penulis 
+                                    ON komentar.idpenulis = penulis.idpenulis
+                                    WHERE komentar.idpost = $key");
+
+        $indeks = 0;
+        $result = array();
+
+        foreach ($query->result_array() as $row) {
+            $result[$indeks++] = $row;
+        }
+
+        return $result;
     }
 }

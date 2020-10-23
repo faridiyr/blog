@@ -20,6 +20,8 @@ class Post extends CI_Controller
     {
         $this->load->model('Post_Model');
         $data['post'] = $this->Post_Model->get_detail($idpost)->row();
+        $data['total_comment'] = $this->Post_Model->get_total_comment_by_post($idpost);
+        $data['comment'] = $this->Post_Model->get_comment($idpost);
 
         $data['title'] = 'Detail Post';
         $this->load->view('homepage/template/header', $data);
@@ -40,4 +42,23 @@ class Post extends CI_Controller
         $this->load->view('homepage/content/post', $data);
         $this->load->view('homepage/template/footer');
     }
+
+    // public function post_comment()
+    // {
+    //     // $data['post'] = $this->Post_Model->get_detail($idpost)->row();
+    //     // $idpost = $data['post']->;
+    //     $this->form_validation->set_rules('message', 'Comment', 'required|trim');
+
+    //     if (($this->form_validation->run() == TRUE)) {
+    //         $data_comment = array(
+    //             'nama' => $this->input->post('nama'),
+    //             // 'idpost' => $idpost,
+    //         );
+    //         $data['comment'] = $data_comment;
+
+    //         $this->db->insert('komentar', $data_comment);
+    //         $this->session->set_flashdata('notification_berhasil', 'Your Comment Added!');
+    //         redirect('Post/');
+    //     }
+    // }
 }
