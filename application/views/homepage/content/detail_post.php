@@ -55,16 +55,6 @@
                             </div>
                         </div>
 
-                        <!-- Post Catagories & Post Share -->
-                        <!-- <div class="d-flex align-items-center justify-content-between"> -->
-                        <!-- Post Catagories -->
-                        <!-- <div class="post-catagories">
-                                <ul class="align-items-center">
-                                    <li><a href="#">Business</a></li>
-                                </ul>
-                            </div> -->
-                        <!-- </div> -->
-
                     </div>
                 </div>
             </div>

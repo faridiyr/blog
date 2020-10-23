@@ -39,16 +39,18 @@
                 <div class="single-footer-widget mb-80">
                     <!-- Widget Title -->
                     <h4 class="widget-title">About Us</h4>
-                    <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
-
-                    <!-- Social Info -->
-                    <div class="footer-social-info">
-                        <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                        <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                    </div>
+                    <p>
+                        <span style="text-align: center;">
+                            Pengembangan Berbasis Platform <br>
+                            Kelas A <br> <br>
+                        </span>
+                        <span style="text-align: left;">
+                            <a href="mailto:faridiyr@students.undip.ac.id" target="_blank" rel="noopener noreferrer">Faridi Yr &emsp; &ensp; 24060117120017</a>
+                            <a href="mailto:cathrinecania@students.undip.ac.id" target="_blank" rel="noopener noreferrer">Cathrine C. &ensp; 24060118120002</a>
+                            <a href="mailto:desyrce@gmail.com" target="_blank" rel="noopener noreferrer">Dessy R. C. &ensp; 24060118120040</a>
+                            <a href="mailto:wahyuindah@students.undip.ac.id" target="_blank" rel="noopener noreferrer">Wahyu I. P. &ensp; 24060118120044</a>
+                        </span>
+                    </p>
                 </div>
             </div>
 
