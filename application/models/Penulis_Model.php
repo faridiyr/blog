@@ -28,4 +28,14 @@ class Penulis_Model extends CI_Model
         $this->db->where('idpenulis', $idpenulis);
         $this->db->delete('penulis');
     }
+
+    function reset_password($idpenulis)
+    {
+        $data_update_penulis = array(
+            'password' => md5('penulis')
+        );
+        $data['penulis'] = $data_update_penulis;
+
+        $this->db->update('penulis', $data_update_penulis, array('idpenulis' => $idpenulis));
+    }
 }

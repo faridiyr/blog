@@ -97,4 +97,11 @@ class Kelola_Penulis extends CI_Controller
 
         $this->Penulis_Model->delete_penulis($idpenulis);
     }
+
+    public function reset_password()
+    {
+        $idpenulis = $_POST['idpenulis'];
+
+        $this->Penulis_Model->reset_password($idpenulis);
+    }
 }

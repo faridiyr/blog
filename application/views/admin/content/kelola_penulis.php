@@ -213,14 +213,14 @@
 </div>
 
 <script type="text/javascript">
-    function delete_repositori_ajax(idkategori) {
+    function delete_repositori_ajax(idpenulis) {
         if (confirm("Anda yakin ingin menghapus data ini ?")) {
             ;
             $.ajax({
-                url: 'Kelola_Kategori/delete_kategori',
+                url: 'Kelola_Penulis/delete_penulis',
                 type: 'POST',
                 data: {
-                    idkategori: idkategori
+                    idpenulis: idpenulis
                 },
                 success: function() {
                     alert('Delete data berhasil');
@@ -228,6 +228,28 @@
                 },
                 error: function() {
                     alert('Delete data gagal');
+                }
+            });
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function reset_repositori_ajax(idpenulis) {
+        if (confirm("Anda yakin ingin mereset password menjadi 'penulis' ?")) {
+            ;
+            $.ajax({
+                url: 'Kelola_Penulis/reset_password',
+                type: 'POST',
+                data: {
+                    idpenulis: idpenulis
+                },
+                success: function() {
+                    alert('Reset data berhasil');
+                    location.reload();
+                },
+                error: function() {
+                    alert('Reset data gagal');
                 }
             });
         }
