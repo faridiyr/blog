@@ -43,22 +43,29 @@ class Post extends CI_Controller
         $this->load->view('homepage/template/footer');
     }
 
-    // public function post_comment()
-    // {
-    //     // $data['post'] = $this->Post_Model->get_detail($idpost)->row();
-    //     // $idpost = $data['post']->;
-    //     $this->form_validation->set_rules('message', 'Comment', 'required|trim');
+    public function post_comment()
+    {
+        $this->load->library('form_validation');
 
-    //     if (($this->form_validation->run() == TRUE)) {
-    //         $data_comment = array(
-    //             'nama' => $this->input->post('nama'),
-    //             // 'idpost' => $idpost,
-    //         );
-    //         $data['comment'] = $data_comment;
+        $idpost = $this->input->post('idpost');
+        $idpenulis = $this->session->userdata('id');
 
-    //         $this->db->insert('komentar', $data_comment);
-    //         $this->session->set_flashdata('notification_berhasil', 'Your Comment Added!');
-    //         redirect('Post/');
-    //     }
-    // }
+        $this->form_validation->set_rules('message', 'Comment', 'required|trim');
+
+        if (($this->form_validation->run() == TRUE)) {
+            $data_comment = array(
+                'idpost' => $idpost,
+                'idpenulis' => $idpenulis,
+                'isi' => $this->input->post('message')
+            );
+            $data['comment'] = $data_comment;
+
+            $this->db->insert('komentar', $data_comment);
+            $this->session->set_flashdata('notification_berhasil', 'Your Comment Added!');
+            redirect('Post/detail_post/' . $idpost);
+        } else {
+            $this->session->set_flashdata('notification_gagal', 'Your Comment Cannot Be Added!');
+            redirect('Post/detail_post/' . $idpost);
+        }
+    }
 }

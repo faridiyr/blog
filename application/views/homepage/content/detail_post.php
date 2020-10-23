@@ -97,17 +97,53 @@
                                 <div class="uza-contact-form">
                                     <h2 class="mb-4">Leave A Comment</h2>
 
-                                    <!-- Form -->
-                                    <form action="" method="post">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" name="post_comment" class="btn uza-btn btn-3 mt-15">Post Comment</button>
+                                    <?php if ($this->session->userdata('level') == null) { ?>
+                                        <div class="container">
+                                            <div class="alert alert-danger" role="alert">
+                                                Please login to leave a comment !
                                             </div>
                                         </div>
-                                    </form>
+                                    <?php  } elseif ($this->session->userdata('level') == 'admin') { ?>
+                                        <div class="container">
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>Are you Admin?</strong> Admin cannot leave a comment !
+                                            </div>
+                                        </div>
+                                    <?php } elseif ($this->session->userdata('level') == 'penulis') { ?>
+
+                                        <?php if ($this->session->flashdata('notification_berhasil') != '') { ?>
+                                            <div class="container">
+                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    <?php echo $this->session->flashdata('notification_berhasil'); ?>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        <?php } elseif ($this->session->flashdata('notification_gagal') != '') { ?>
+                                            <div class="container">
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <?php echo $this->session->flashdata('notification_gagal'); ?>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+
+                                        <!-- Form -->
+                                        <form action="<?= site_url('Post/post_comment') ?>" autocomplete="on" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <input hidden type="text" class="form-control" name="idpost" id="idpost" value="<?= $post->idpost ?>">
+                                                    <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" name="post_comment" class="btn uza-btn btn-3 mt-15">Post Comment</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    <?php } ?>
                                 </div>
 
                             </div>
