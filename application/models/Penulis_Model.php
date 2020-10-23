@@ -22,4 +22,10 @@ class Penulis_Model extends CI_Model
 
         return $result;
     }
+
+    function delete_penulis($idpenulis)
+    {
+        $this->db->where('idpenulis', $idpenulis);
+        $this->db->delete('penulis');
+    }
 }

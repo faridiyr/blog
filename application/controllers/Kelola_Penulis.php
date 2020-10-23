@@ -67,26 +67,34 @@ class Kelola_Penulis extends CI_Controller
         }
     }
 
-    public function edit_kategori()
+    public function edit_penulis()
     {
-        $idkategori = $this->input->post('idkategori');
+        $idpenulis = $this->input->post('idpenulis');
 
-        $this->form_validation->set_rules('nama', 'Nama Kategori', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[penulis.email]', array('is_unique' => 'Email already exist, Use an other Email Address!'));
+        $this->form_validation->set_rules('address', 'Address', 'required|trim|min_length[4]|max_length[100]');
+        $this->form_validation->set_rules('city', 'City', 'required|trim|min_length[4]|max_length[100]');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim');
 
-        $data_update_kategori = array(
-            'nama' => $this->input->post('nama')
+        $data_update_penulis = array(
+            'nama' => $this->input->post('name'),
+            'email' => $this->input->post('email'),
+            'alamat' => $this->input->post('address'),
+            'kota' => $this->input->post('city'),
+            'no_telp' => $this->input->post('phone'),
         );
-        $data['kategori'] = $data_update_kategori;
+        $data['penulis'] = $data_update_penulis;
 
-        $this->db->update('kategori', $data_update_kategori, array('idkategori' => $idkategori));
-        $this->session->set_flashdata('notification_berhasil', 'Kategori berhasil ditambahkan');
-        redirect('Kelola_Kategori');
+        $this->db->update('penulis', $data_update_penulis, array('idpenulis' => $idpenulis));
+        $this->session->set_flashdata('notification_berhasil', 'Penulis berhasil diubah');
+        redirect('Kelola_Penulis');
     }
 
-    public function delete_kategori()
+    public function delete_penulis()
     {
-        $idkategori = $_POST['idkategori'];
+        $idpenulis = $_POST['idpenulis'];
 
-        $this->Kategori_Model->delete_kategori($idkategori);
+        $this->Penulis_Model->delete_penulis($idpenulis);
     }
 }

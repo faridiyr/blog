@@ -71,7 +71,7 @@
                                 <td>
 
                                     <!-- Tombol Edit -->
-                                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-kategori<?= $item['idpenulis'] ?>">
+                                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-penulis<?= $item['idpenulis'] ?>">
                                         <span btn-icon-left>
                                             <i class="fa fa-edit"></i>
                                         </span>
@@ -110,7 +110,7 @@
 
 <!--Modal dialog box for edit penulis-->
 <?php foreach ($penulis as $item) { ?>
-    <div class="modal modal-primary fade" id="modal-edit-kategori<?= $item['idpenulis']; ?>">
+    <div class="modal modal-primary fade" id="modal-edit-penulis<?= $item['idpenulis']; ?>">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -119,11 +119,35 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" enctype="multipart/form-data" action="<?= site_url('Kelola_Kategori/edit_penulis'); ?>" method="POST">
+                    <form role="form" enctype="multipart/form-data" action="<?= site_url('Kelola_Penulis/edit_penulis'); ?>" method="POST">
                         <input hidden type="text" class="form-control" id="idpenulis" name="idpenulis" value="<?= $item['idpenulis'] ?>" required>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nama Penulis :</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<?= $item['nama'] ?>">
+                            <label for="recipient-name" class="col-form-label">Nama :</label>
+                            <input type="text" class="form-control" id="name" name="name" value="<?= $item['nama'] ?>" minlength="4" maxlength="50" required>
+                            <?= form_error('name', '<small class="text-danger">', '</small>') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="staticEmail" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?= $item['email'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama" class="col-form-label">Alamat:</label>
+                            <input type="text" class="form-control" id="address" name="address" value="<?= $item['alamat'] ?>" minlength="4" maxlength="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama" class="col-form-label">Kota:</label>
+                            <input type="text" class="form-control" id="city" name="city" value="<?= $item['kota'] ?>" minlength="4" maxlength="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama" class="col-form-label">No Telepon:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="<?= $item['no_telp'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama" class="col-form-label">Gambar:</label>
+                            <div class="form-group">
+                                <img src="<?= base_url('assets/upload/avatar/' . $item['file_gambar']) ?>" alt="" style="max-width: 200px; max-height:200px">
+                                <input type="text" readonly class="form-control-plaintext" id="file_gambar" name="file_gambar" value="<?= $item['file_gambar'] ?>">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" value="1" name="simpan" class="btn btn-primary">Simpan</button>
