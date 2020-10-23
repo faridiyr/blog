@@ -39,30 +39,31 @@ class Kelola_Penulis extends CI_Controller
         $this->load->view('admin/template/footer');
     }
 
-    public function tambah_kategori()
+    public function tambah_penulis()
     {
-        $this->form_validation->set_rules('nama', 'Nama Kategori', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[penulis.email]', array('is_unique' => 'Email already exist, Use an other Email Address!'));
+        $this->form_validation->set_rules('address', 'Address', 'required|trim|min_length[4]|max_length[100]');
+        $this->form_validation->set_rules('city', 'City', 'required|trim|min_length[4]|max_length[100]');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim');
 
-        if (($this->form_validation->run() == TRUE)) {
-            $data_kategori = array(
-                'nama' => $this->input->post('nama')
+        if ($this->form_validation->run() == true) {
+            $penulis = array(
+                'nama' => $this->input->post('name'),
+                'password' => md5($this->input->post('password')),
+                'alamat' => $this->input->post('address'),
+                'kota' => $this->input->post('city'),
+                'email' => $this->input->post('email'),
+                'no_telp' => $this->input->post('phone'),
+                'file_gambar' => $this->input->post('file_gambar')
             );
-            $data['kategori'] = $data_kategori;
-
-            $this->db->insert('kategori', $data_kategori);
-            $this->session->set_flashdata('notification_berhasil', 'Kategori berhasil ditambahkan');
-            redirect('Kelola_Kategori');
+            $data['penulis'] = $penulis;
+            $this->db->insert('penulis', $penulis);
+            $this->session->set_flashdata('notification_berhasil', 'Akun Penulis berhasil ditambahkan!');
+            redirect('Kelola_Penulis');
         } else {
-            $this->session->set_flashdata('notification_gagal', 'Kategori gagal ditambahkan');
-
-            $data['kategori'] = $this->Kategori_Model->get_all_kategori();
-
-            $data['title'] = 'Kelola Kategori';
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/template/navbar');
-            $this->load->view('admin/content/kelola_kategori', $data);
-            $this->load->view('admin/template/footer');
+            $this->session->set_flashdata('notification_gagal', 'Penulis gagal ditambahkan');
+            redirect('Kelola_Penulis');
         }
     }
 

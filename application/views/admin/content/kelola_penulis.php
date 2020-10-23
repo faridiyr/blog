@@ -108,22 +108,22 @@
 </div>
 <!-- End of Main Content -->
 
-<!--Modal dialog box for edit kategori-->
-<?php foreach ($kategori as $item) { ?>
-    <div class="modal modal-primary fade" id="modal-edit-kategori<?= $item['idkategori']; ?>">
+<!--Modal dialog box for edit penulis-->
+<?php foreach ($penulis as $item) { ?>
+    <div class="modal modal-primary fade" id="modal-edit-kategori<?= $item['idpenulis']; ?>">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Kategori</h4>
+                    <h4 class="modal-title">Edit Penulis</h4>
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" enctype="multipart/form-data" action="<?= site_url('Kelola_Kategori/edit_kategori'); ?>" method="POST">
-                        <input hidden type="text" class="form-control" id="idkategori" name="idkategori" value="<?= $item['idkategori'] ?>" required>
+                    <form role="form" enctype="multipart/form-data" action="<?= site_url('Kelola_Kategori/edit_penulis'); ?>" method="POST">
+                        <input hidden type="text" class="form-control" id="idpenulis" name="idpenulis" value="<?= $item['idpenulis'] ?>" required>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nama Kategori :</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $item['nama'] ?>" required>
+                            <label for="recipient-name" class="col-form-label">Nama Penulis :</label>
+                            <input type="text" class="form-control" id="name" name="name" value="<?= $item['nama'] ?>">
                         </div>
                         <div class="modal-footer">
                             <button type="submit" value="1" name="simpan" class="btn btn-primary">Simpan</button>
@@ -148,23 +148,28 @@
                 <form role="form" enctype="multipart/form-data" action="<?= site_url('Kelola_Penulis/tambah_penulis'); ?>" method="POST">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Nama :</label>
-                        <input type="text" class="form-control" id="nama" name="nama" maxlength="100" required>
+                        <input type="text" class="form-control" id="name" name="name" value="<?= set_value('email'); ?>" minlength="4" maxlength="50" required>
+                        <?= form_error('name', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label for="staticEmail" class="col-form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" value="">
+                        <input type="email" class="form-control" id="email" name="email" value="<?= set_value('email'); ?>" required>
+                        <?= form_error('email', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label for="nama" class="col-form-label">Alamat:</label>
-                        <input type="text" class="form-control" id="address" name="address" value="" required minlength="4" maxlength="100">
+                        <input type="text" class="form-control" id="address" name="address" value="<?= set_value('alamat'); ?>" minlength="4" maxlength="100" required>
+                        <?= form_error('address', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label for="nama" class="col-form-label">Kota:</label>
-                        <input type="text" class="form-control" id="city" name="city" value="" required minlength="4" maxlength="100">
+                        <input type="text" class="form-control" id="city" name="city" value="<?= set_value('city'); ?>" minlength="4" maxlength="100" required>
+                        <?= form_error('city', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label for="nama" class="col-form-label">No Telepon:</label>
-                        <input type="text" class="form-control" id="phone" name="phone" value="" required>
+                        <input type="text" class="form-control" id="phone" name="phone" value="<?= set_value('phone'); ?>" required>
+                        <?= form_error('phone', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label for="nama" class="col-form-label">Password Default:</label>
