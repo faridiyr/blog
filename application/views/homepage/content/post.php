@@ -44,7 +44,7 @@
                              <ul class="list-group">
                                  <a href="<?= site_url('Post') ?>">
                                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                                         All Post
+                                         All
                                          <span class="badge badge-primary badge-pill"><?= $total_post ?></span>
                                      </li>
                                  </a>
