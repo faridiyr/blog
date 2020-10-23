@@ -43,6 +43,7 @@
                                     ?>
                                     <div class="post-date"><span><?= $dateformat_tanggal ?></span>&ensp;<?= $dateformat_bulan_tahun ?></div>
                                     <h2><?= $post->judul ?></h2>
+                                    <h5>by <?= $post->nama ?></h5>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -58,7 +59,7 @@
                                     <!-- Post Catagories -->
                                     <div class="post-catagories">
                                         <ul class="d-flex flex-wrap align-items-center">
-                                            <li><a href="#"><?= $post->nama_kategori ?></a></li>
+                                            <li><a href="<?= site_url('Post/by_kategori/' . $post->idkategori) ?>"><?= $post->nama_kategori ?></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -74,18 +75,34 @@
                                             <!-- Single Comment Area -->
                                             <li class="single_comment_area">
                                                 <!-- Comment Content -->
-                                                <div class="comment-content d-flex">
-                                                    <!-- Comment Author -->
-                                                    <div class="comment-author">
-                                                        <img src="<?= base_url('assets/upload/avatar/' . $item['gambar']) ?>" alt="author">
-                                                    </div>
-                                                    <!-- Comment Meta -->
-                                                    <div class="comment-meta">
-                                                        <a href="#" class="post-date"><?= $date_format ?></a>
-                                                        <h5><?= $item['nama'] ?></h5>
-                                                        <p>
-                                                            <?= $item['isi'] ?>
-                                                        </p>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-10">
+                                                            <div class="comment-content d-flex">
+                                                                <!-- Comment Author -->
+                                                                <div class="comment-author">
+                                                                    <img src="<?= base_url('assets/upload/avatar/' . $item['gambar']) ?>" alt="author">
+                                                                </div>
+                                                                <!-- Comment Meta -->
+                                                                <div class="comment-meta">
+                                                                    <a href="#" class="post-date"><?= $date_format ?></a>
+                                                                    <h5><?= $item['nama'] ?></h5>
+                                                                    <p>
+                                                                        <?= $item['isi'] ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <?php if ($this->session->userdata('id') == $post->idpenulis) { ?>
+                                                                <button data-toggle="modal" data-target="#modal-delete-komentar<?= $item['idkomentar'] ?>" class="btn btn-danger btn-sm">
+                                                                    <span btn-icon-left>
+                                                                        <i class="fa fa-trash"></i>
+                                                                    </span>
+                                                                    &ensp;Delete</button>
+                                                            <?php } ?>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </li>
@@ -156,3 +173,53 @@
     </div>
 </section>
 <!-- ***** Blog Details Area End ***** -->
+
+<!-- modal delete komentar -->
+<?php foreach ($comment as $item) { ?>
+    <div class="modal modal-primary fade" id="modal-delete-komentar<?= $item['idkomentar']; ?>">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure to delete this comment ?
+                    <form role="form" action="<?= site_url('Post/delete_komentar') ?>" method="POST">
+                        <div class="form-group">
+                            <input hidden type="text" name="idkomentar" id="idkomentar" value="<?= $item['idkomentar'] ?>">
+                            <input hidden type="text" name="idpost" id="idpost" value="<?= $item['idpost'] ?>">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+<!-- <script type="text/javascript">
+    function delete_repositori_ajax(idkomentar) {
+        if (confirm("Anda yakin ingin menghapus data ini ?")) {
+            ;
+            $.ajax({
+                url: 'Post/delete_komentar',
+                type: 'POST',
+                data: {
+                    idkomentar: idkomentar
+                },
+                success: function() {
+                    alert('Delete data berhasil');
+                    location.reload();
+                },
+                error: function() {
+                    alert('Delete data gagal');
+                }
+            });
+        }
+    }
+</script> -->

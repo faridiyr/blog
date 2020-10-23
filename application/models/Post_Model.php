@@ -113,11 +113,13 @@ class Post_Model extends CI_Model
     function get_detail($idpost)
     {
         $this->db->select('post.idpost as idpost, 
-                            post.judul as judul, post.idkategori as idkategori, 
+                            post.judul as judul, 
+                            post.idkategori as idkategori, 
                             post.isi_post as isi_post, 
                             post.file_gambar as gambar_post, 
                             post.tgl_insert as tgl_insert, 
-                            post.tgl_update as tgl_update, 
+                            post.tgl_update as tgl_update,
+                            post.idpenulis as idpenulis, 
                             penulis.file_gambar as gambar_penulis,
                             penulis.nama as nama,
                             kategori.nama as nama_kategori');
@@ -236,5 +238,11 @@ class Post_Model extends CI_Model
         }
 
         return $result;
+    }
+
+    function delete_komentar($idkomentar)
+    {
+        $this->db->where('idkomentar', $idkomentar);
+        $this->db->delete('komentar');
     }
 }

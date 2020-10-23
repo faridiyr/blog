@@ -68,4 +68,15 @@ class Post extends CI_Controller
             redirect('Post/detail_post/' . $idpost);
         }
     }
+
+    public function delete_komentar()
+    {
+        $this->load->model('Post_Model');
+
+        $idkomentar = $this->input->post('idkomentar');
+        $idpost = $this->input->post('idpost');
+
+        $this->Post_Model->delete_komentar($idkomentar);
+        redirect('Post/detail_post/' . $idpost);
+    }
 }
