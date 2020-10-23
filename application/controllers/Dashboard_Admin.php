@@ -26,11 +26,16 @@ class Dashboard_Admin extends CI_Controller
             $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
         }
 
+        $this->load->model('Dashboard_Model');
+        $data['total_kategori'] = $this->Dashboard_Model->get_total_kategori();
+        $data['total_penulis'] = $this->Dashboard_Model->get_total_penulis();
+        $data['total_post'] = $this->Dashboard_Model->get_total_post();
+
         $data['title'] = 'Dashboard';
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/sidebar');
         $this->load->view('admin/template/navbar');
-        $this->load->view('admin/content/dashboard_admin');
+        $this->load->view('admin/content/dashboard_admin', $data);
         $this->load->view('admin/template/footer');
     }
 }

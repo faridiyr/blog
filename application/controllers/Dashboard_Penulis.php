@@ -36,11 +36,15 @@ class Dashboard_Penulis extends CI_Controller
             $data['user_loged'] = $this->Auth_Model->get_data_admin_session($id)->row();
         }
 
+        $this->load->model('Dashboard_Model');
+        $idpenulis = $this->session->userdata('id');
+        $data['total_post'] = $this->Dashboard_Model->get_total_post_penulis($idpenulis);
+
         $data['title'] = 'Dashboard';
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/sidebar_penulis');
         $this->load->view('admin/template/navbar');
-        $this->load->view('admin/content/dashboard_penulis');
+        $this->load->view('admin/content/dashboard_penulis', $data);
         $this->load->view('admin/template/footer');
     }
 }
