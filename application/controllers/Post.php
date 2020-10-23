@@ -8,6 +8,7 @@ class Post extends CI_Controller
 
         $data['kategori'] = $this->Post_Model->get_all_kategori();
         $data['post'] = $this->Post_Model->get_all_post();
+        $data['total_post'] = $this->Post_Model->get_total_post();
 
         $data['title'] = 'Post';
         $this->load->view('homepage/template/header', $data);
@@ -28,20 +29,15 @@ class Post extends CI_Controller
 
     public function by_kategori($idkategori)
     {
-        // $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->load->model('Post_Model');
 
-        // $idkategori = $this->input->post('kategori');
+        $data['post'] = $this->Post_Model->get_by_kategori($idkategori);
+        $data['kategori'] = $this->Post_Model->get_all_kategori();
+        $data['total_post'] = $this->Post_Model->get_total_post();
 
-        // if ($this->form_validation->run() == true) {
-
-        //     redirect('Auth')
-        //     $data['kategori'] = $this->Post_Model->get_all_kategori();
-        //     $data['post'] = $this->Post_Model->get_all_post_by_kategori($idkategori);
-
-        //     $data['title'] = 'Post';
-        //     $this->load->view('homepage/template/header', $data);
-        //     $this->load->view('homepage/content/by_kategori', $data);
-        //     $this->load->view('homepage/template/footer');
-        // }
+        $data['title'] = 'Post';
+        $this->load->view('homepage/template/header', $data);
+        $this->load->view('homepage/content/post', $data);
+        $this->load->view('homepage/template/footer');
     }
 }

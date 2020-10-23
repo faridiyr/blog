@@ -14,6 +14,8 @@
                  </div>
              </div>
          </div>
+
+
      </div>
 
      <!-- Background Curve -->
@@ -27,22 +29,43 @@
  <div class="uza-blog-area section-padding-80">
      <div class="container">
 
-         <div class="row">
-             <form action="<?= site_url('Post/by_kategori') ?>" class="form-inline" method="POST">
-                 <div class="form-group mb-2">
-                     <h4>Kategori :&emsp;</h4>
-                     <select class="form-control" name="kategori" id="kategori">
-                         <option value="all">All Kategori</option>
-                         <?php
-                            foreach ($kategori as $item) {
-                                echo '<option value="' . $item['idkategori'] . '">' . $item['nama'] . '</option>';
-                            } ?>
-                     </select>
-                     &emsp;
-                     <button type="button" href="<?= site_url('Post/by_kategori') ?>" class="btn btn-primary">Apply</button>
+         <div class="container" style="text-align: -webkit-center">
+             <div class="accordion" id="accordionExample" style="max-width: 400px; text-align:center">
+                 <div class="card">
+                     <div class="card-header" id="headingThree">
+                         <h2 class="mb-0">
+                             <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapseThree">
+                                 Kategori
+                             </button>
+                         </h2>
+                     </div>
+                     <div id="collapse" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                         <div class="card-body">
+                             <ul class="list-group">
+                                 <a href="<?= site_url('Post') ?>">
+                                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                                         All Post
+                                         <span class="badge badge-primary badge-pill"><?= $total_post ?></span>
+                                     </li>
+                                 </a>
+                                 <?php foreach ($kategori as $item) { ?>
+                                     <a href="<?= site_url('Post/by_kategori/' . $item['idkategori']) ?>">
+                                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                                             <?= $item['nama'] ?>
+                                             <span class="badge badge-primary badge-pill"></span>
+                                         </li>
+                                     </a>
+                                     <!-- </form> -->
+                                 <?php } ?>
+                             </ul>
+                         </div>
+                     </div>
                  </div>
-             </form>
+             </div>
          </div>
+         <br>
+         <br>
+         <br>
          <br>
          <div class="row">
              <?php
