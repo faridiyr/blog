@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2020 at 07:48 AM
+-- Generation Time: Oct 24, 2020 at 07:57 AM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -92,7 +92,9 @@ INSERT INTO `komentar` (`idkomentar`, `idpost`, `idpenulis`, `isi`, `tgl_update`
 (9, 3, 7, 'samlekom', '2020-10-23 12:45:43'),
 (10, 1, 7, 'mantap jiwaaa', '2020-10-23 12:46:08'),
 (13, 2, 4, 'LOL', '2020-10-23 15:02:27'),
-(14, 2, 4, 'weke weke', '2020-10-24 00:05:03');
+(14, 2, 4, 'weke weke', '2020-10-24 00:05:03'),
+(15, 8, 4, 'first', '2020-10-24 05:49:43'),
+(16, 7, 4, 'first ye :V', '2020-10-24 05:50:07');
 
 -- --------------------------------------------------------
 
@@ -117,8 +119,9 @@ CREATE TABLE `penulis` (
 
 INSERT INTO `penulis` (`idpenulis`, `nama`, `password`, `alamat`, `kota`, `email`, `no_telp`, `file_gambar`) VALUES
 (4, 'Faridi Yr', '81dc9bdb52d04dc20036dbd8313ed055', 'Tembalang', 'Semarang', 'faridiyr@gmail.com', '1234567890', 'file_1603352068.jpeg'),
-(5, 'cathrine', '81dc9bdb52d04dc20036dbd8313ed055', 'semarang', 'semarang kota', 'cath@gmail.com', '123412341234', 'file_1603439425.png'),
-(7, 'ngaku admin', 'de3709b8e6f81a4ef5a858b7a2d28883', '11 aaa', '1111 wkwkwk', 'admin@gmail.com', '22 22222', 'default_penulis.png');
+(5, 'cathrine', 'de3709b8e6f81a4ef5a858b7a2d28883', 'semarang', 'semarang kota', 'cath@gmail.com', '123412341234', 'file_1603439425.png'),
+(7, 'dessy', 'de3709b8e6f81a4ef5a858b7a2d28883', 'mana hayo', 'wkwkwk', 'des@gmail.com', '12345654321', 'default_penulis.png'),
+(8, 'indah', 'de3709b8e6f81a4ef5a858b7a2d28883', 'rumah', 'smrg', 'ndah@gmail.com', '333444555666', 'default_penulis.png');
 
 -- --------------------------------------------------------
 
@@ -147,7 +150,8 @@ INSERT INTO `post` (`idpost`, `judul`, `idkategori`, `isi_post`, `file_gambar`, 
 (3, 'New Honda CBR250RR SP Vs Kawasaki Ninja ZX25R 4 Cylinder', 3, '<p style=\"text-align:justify\">Akhir akhir ini Dunia otomotif di gegerkan dengan launching nya produk baru dari Kawasaki ya itu ZX25R yang bekapasitas mesin 4 cylinder. PT Kawasaki Motor Indonesia (KMI) merilis motor yang juga disebut Ninja ZX-25R ini secara virtual melalui channel YouTube KMI pada Jumat (10/7/2020). Indonesia dipilih sebagai tempat debut Kawasaki Ninja 250 ZX25R 4 silinder terbaru ini untuk pasar global. Maka dari itu hal ini membuat para perusahaan otomotif terkenal tidak akan tinggal diam melihat saingan nya rilis produk terbarunya. Honda dalam kubu yang panas pada kali ini,Oleh sebab itu Honda tidak mau kalah dan menciptakan sebuah karya yang sangat luar biasa yaitu All New Honda CBR 250RR SP yang tentunya siap untuk saingi si hijau ZX25R.</p>\r\n', 'motor.jpg', '2020-10-11', '2020-10-12', 4),
 (6, 'tes tes', 1, '<p>ini contoh</p>\r\n', 'file_1603437975.jpg', '2020-10-20', '2020-10-20', 5),
 (7, 'wawww', 1, '<p>wkwkwwk</p>\r\n', 'file_1603517545.jpg', '2020-10-21', '2020-10-21', 4),
-(8, 'apa yaaa', 4, '<p>gagagagaaga</p>\r\n', 'file_1603518069.jpg', '2020-10-29', '2020-10-29', 7);
+(8, 'apa yaaa', 4, '<p>gagagagaaga</p>\r\n', 'file_1603518069.jpg', '2020-10-29', '2020-10-29', 7),
+(9, 'first', 4, '<p>22222222</p>\r\n', 'file_1603518951.jpg', '2020-10-29', '2020-10-29', 8);
 
 --
 -- Indexes for dumped tables
@@ -206,19 +210,19 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `penulis`
 --
 ALTER TABLE `penulis`
-  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
