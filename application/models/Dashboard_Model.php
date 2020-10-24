@@ -44,4 +44,11 @@ class Dashboard_Model extends CI_Model
 
         return $count;
     }
+
+    public function getCountPostPerCat()
+    {
+        $query = $this->db->query("SELECT kategori.idkategori, nama, COUNT(post.idkategori) AS frekuensi FROM kategori LEFT JOIN post ON kategori.idkategori = post.idkategori GROUP BY kategori.idkategori ORDER BY kategori.idkategori");
+        $results = $query->result(); // mengembalikan semua nilai hasil query dalam bentuk object
+        return $results;
+    }
 }

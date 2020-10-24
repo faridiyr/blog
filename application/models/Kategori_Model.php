@@ -28,4 +28,13 @@ class Kategori_Model extends CI_Model
         $this->db->where('idkategori', $idkategori);
         $this->db->delete('kategori');
     }
+
+    function get_pie_kategori()
+    {
+        $query = $this->db->query("SELECT * FROM kategori");
+        $result = $query->result();
+
+
+        return $result;
+    }
 }

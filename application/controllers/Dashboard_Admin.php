@@ -27,6 +27,10 @@ class Dashboard_Admin extends CI_Controller
         }
 
         $this->load->model('Dashboard_Model');
+        $this->load->model('Kategori_Model');
+        $data['kategori'] = $this->Kategori_Model->get_pie_kategori();
+        $data['chartpie'] = $this->Dashboard_Model->getCountPostPerCat();
+
         $data['total_kategori'] = $this->Dashboard_Model->get_total_kategori();
         $data['total_penulis'] = $this->Dashboard_Model->get_total_penulis();
         $data['total_post'] = $this->Dashboard_Model->get_total_post();
