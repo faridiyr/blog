@@ -52,7 +52,7 @@
                              <!-- Post Content -->
                              <div class="post-content">
                                  <span class="post-date"><span><?= $dateformat_tanggal ?></span><?= $dateformat_bulan_tahun ?></span>
-                                 <a href="#" class="post-title"><?= $item['judul'] ?></a>
+                                 <a href="<?= site_url('Post/detail_post/' . $item['idpost']) ?>" class="post-title"><?= $item['judul'] ?></a>
                                  <p><?php
                                     $isi = $item['isi_post'];
                                     if (strlen($isi) >= 100) {
@@ -61,7 +61,7 @@
                                         echo $item['isi_post'];
                                     }
                                     ?></p>
-                                 <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                                 <a href="<?= site_url('Post/detail_post/' . $item['idpost']) ?>" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
                              </div>
                          </div>
                      </div>
