@@ -153,7 +153,7 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <input hidden type="text" class="form-control" name="idpost" id="idpost" value="<?= $post->idpost ?>">
-                                                    <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
+                                                    <textarea name="message" class="form-control mb-30" placeholder="Comment" required></textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <button type="submit" name="post_comment" class="btn uza-btn btn-3 mt-15">Post Comment</button>
