@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2020 at 07:57 AM
+-- Generation Time: Oct 24, 2020 at 11:53 AM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`idadmin`, `nama`, `email`, `password`, `file_gambar`) VALUES
-(1, 'Admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'file_1603346538.jpeg');
+(1, 'Admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'file_1603532098.jpeg');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,8 @@ INSERT INTO `komentar` (`idkomentar`, `idpost`, `idpenulis`, `isi`, `tgl_update`
 (13, 2, 4, 'LOL', '2020-10-23 15:02:27'),
 (14, 2, 4, 'weke weke', '2020-10-24 00:05:03'),
 (15, 8, 4, 'first', '2020-10-24 05:49:43'),
-(16, 7, 4, 'first ye :V', '2020-10-24 05:50:07');
+(16, 7, 4, 'first ye :V', '2020-10-24 05:50:07'),
+(17, 8, 4, 'ini sample komen', '2020-10-24 09:28:19');
 
 -- --------------------------------------------------------
 
@@ -204,19 +205,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `penulis`
 --
 ALTER TABLE `penulis`
-  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idpenulis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `post`
