@@ -1,3 +1,16 @@
+<?php
+$i = 0;
+foreach ($kategori as $kat) {
+    $array[$i] = $kat->nama;
+    $i++;
+}
+
+$j = 0;
+foreach ($chartpie as $val) {
+    $array2[$j] = $val->frekuensi * 1;
+    $j++;
+}
+?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -33,51 +46,20 @@
 
     <!-- Content Row -->
     <div class="row">
-
         <div class="container">
-
-
             <div class="card shadow mb-4" style="width: 1000px;">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
+                    <h6 class="m-0 font-weight-bold text-primary">Rekap Postingan</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
-                        </span>
-                    </div>
+
+                    <div id="container"></div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
-
     <br>
 
 </div>
@@ -85,3 +67,53 @@
 
 </div>
 <!-- End of Main Content -->
+
+<script type="text/javascript">
+    Highcharts.chart('container', {
+        chart: {
+            type: 'areaspline'
+        },
+        title: {
+            text: 'Jumlah data post'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 150,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
+        },
+        xAxis: {
+            categories: <?= json_encode($array); ?>,
+            plotBands: [{ // visualize the weekend
+                from: 4.5,
+                to: 6.5,
+                color: 'rgba(68, 170, 213, .2)'
+            }]
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit units'
+            }
+        },
+        tooltip: {
+            shared: true,
+            valueSuffix: ' units'
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            areaspline: {
+                fillOpacity: 0.5
+            }
+        },
+        series: [{
+            name: 'post',
+            data: <?= json_encode($array2); ?>
+        }]
+    });
+</script>

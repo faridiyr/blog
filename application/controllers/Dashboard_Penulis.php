@@ -37,6 +37,13 @@ class Dashboard_Penulis extends CI_Controller
         }
 
         $this->load->model('Dashboard_Model');
+        $this->load->model('Kategori_Model');
+
+        $idpenulis = $this->session->userdata('id');
+
+        $data['kategori'] = $this->Kategori_Model->get_pie_kategori();
+        $data['chartpie'] = $this->Dashboard_Model->getCountPostPerCat_penulis($idpenulis);
+
         $idpenulis = $this->session->userdata('id');
         $data['total_post'] = $this->Dashboard_Model->get_total_post_penulis($idpenulis);
 

@@ -51,4 +51,11 @@ class Dashboard_Model extends CI_Model
         $results = $query->result(); // mengembalikan semua nilai hasil query dalam bentuk object
         return $results;
     }
+
+    public function getCountPostPerCat_penulis($idpenulis)
+    {
+        $query = $this->db->query("SELECT kategori.idkategori, nama, COUNT(post.idkategori) AS frekuensi FROM kategori LEFT JOIN post ON kategori.idkategori = post.idkategori WHERE post.idpenulis = $idpenulis GROUP BY kategori.idkategori ORDER BY kategori.idkategori");
+        $results = $query->result(); // mengembalikan semua nilai hasil query dalam bentuk object
+        return $results;
+    }
 }
