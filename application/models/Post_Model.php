@@ -228,7 +228,8 @@ class Post_Model extends CI_Model
                                     FROM komentar 
                                     JOIN penulis 
                                     ON komentar.idpenulis = penulis.idpenulis
-                                    WHERE komentar.idpost = $key");
+                                    WHERE komentar.idpost = $key
+                                    ORDER BY komentar.tgl_update");
 
         $indeks = 0;
         $result = array();
