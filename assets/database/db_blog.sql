@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2020 at 11:53 AM
+-- Generation Time: Dec 23, 2020 at 04:57 AM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -122,7 +122,8 @@ INSERT INTO `penulis` (`idpenulis`, `nama`, `password`, `alamat`, `kota`, `email
 (4, 'Faridi Yr', '81dc9bdb52d04dc20036dbd8313ed055', 'Tembalang', 'Semarang', 'faridiyr@gmail.com', '1234567890', 'file_1603352068.jpeg'),
 (5, 'cathrine', 'de3709b8e6f81a4ef5a858b7a2d28883', 'semarang', 'semarang kota', 'cath@gmail.com', '123412341234', 'file_1603439425.png'),
 (7, 'dessy', 'de3709b8e6f81a4ef5a858b7a2d28883', 'mana hayo', 'wkwkwk', 'des@gmail.com', '12345654321', 'default_penulis.png'),
-(8, 'indah', 'de3709b8e6f81a4ef5a858b7a2d28883', 'rumah', 'smrg', 'ndah@gmail.com', '333444555666', 'default_penulis.png');
+(8, 'indah', 'de3709b8e6f81a4ef5a858b7a2d28883', 'rumah', 'smrg', 'ndah@gmail.com', '333444555666', 'default_penulis.png'),
+(9, 'Julie Smith', '81dc9bdb52d04dc20036dbd8313ed055', 'alamat', 'semarang', 'email@gmail.com', '1234567890', 'default_penulis.png');
 
 -- --------------------------------------------------------
 
@@ -205,13 +206,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `penulis`
